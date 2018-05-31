@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="galeria.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <title>Kocham góry!</title>
+</head>
+
+<body>
+  <nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">Kocham Góry</a>
+      </div>
+      <ul class="nav navbar-nav">
+        <li>
+          <a href="polska.html">Góry w Polsce</a>
+        </li>
+        <li>
+          <a href="swiat.html">Góry na świecie</a>
+        </li>
+        <li>
+          <a href="cytaty.html">Cytaty o górach</a>
+        </li>
+        <li class="active">
+          <a href="galeria.html">Galeria</a>
+        </li>
+        <li>
+          <a href="kontakt.html">Kontakt</a>
+        </li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <h2>Galeria zdjęć</h2>
+
+  <div class="responsive">
+    <div class="gallery">
+
+      <img id="myImg" src="images/giewont.jpg" alt="Giewont, Tatry" width="600" height="400" onclick="myFunction(this);">
+
+      <div class="desc">Giewont, Tatry</div>
+    </div>
+  </div>
+
+
+
+  <div class="responsive">
+    <div class="gallery">
+
+      <img id="myImg2" src="images/grossglockner.jpg" alt="Grossglockner, Austria" width="600" height="400" onclick="myFunction(this);">
+
+      <div class="desc">Grossglockner, Austria</div>
+    </div>
+  </div>
+
+
+
+  <div class="responsive">
+    <div class="gallery">
+
+      <img id="myImg3" src="images/rysy.jpg" alt="Rysy, Tatry" width="600" height="400" onclick="myFunction(this);">
+
+      <div class="desc">Rysy, Tatry</div>
+    </div>
+  </div>
+
+
+  <div class="responsive">
+    <div class="gallery">
+
+      <img id="myImg4" src="images/splyw_dunajcem.jpg" alt="Spływ Dunajcem" width="600" height="400" onclick="myFunction(this);">
+
+      <div class="desc">Spływ Dunajcem, Pieniny</div>
+    </div>
+  </div>
+
+  <!-- The Modal -->
+  <div id="myModal" class="modal">
+    <img class="modal-content" id="img">
+    <div id="caption"></div>
+  </div>
+
+  <div class="clearfix"></div>
+
+
+
+  <footer>
+    &copy; 2018 Monika Penkała | Jeżeli widzisz błąd na stronie, napisz do mnie na adres:
+    <a href="mailto:mon.penkala@gmail.com">mon.penkala@gmail.com</a> ;-)
+  </footer>
+
+  <script src="galeria.js"></script>
+
+</body>
+
+</html>

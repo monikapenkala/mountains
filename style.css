@@ -1,0 +1,75 @@
+
+
+
+.index_quotes {
+  margin-top: 60px;
+  margin-bottom: 60px;
+  padding: 20px;
+  font-size: 20px;
+  font-style: italic;
+  font-family: Georgia, Times, serif;
+  border-top: 1px solid #665544;
+  border-bottom: 1px solid #665544;
+  text-align: center;
+}
+
+a.links {
+  text-decoration: none;
+  color: #2E2E2E;
+}
+
+.mountains {
+  font-family: 'Roboto', sans-serif;
+  font-size: 20px;
+  text-align: justify;
+  margin: 10px;
+}
+
+h2 {
+  font-family: Georgia, Times, serif;
+}
+
+.giewont {
+  float: left;
+  width: 300px;
+  margin: 0px 10px 10px 0px;
+}
+
+.osiolek {
+  float: left;
+  width: 300px;
+  margin: 0px 10px 10px 0px;
+}
+
+
+.carousel-inner > .item > img {
+    margin: 0 auto;
+  }
+
+.maly_obrazek {
+  float: left;
+  width: 300px;
+  margin: 0px 10px 10px 0px;
+}
+
+.quote_entity {
+  background-color: #f1f1f1;
+  padding: 10px;
+  margin: 20px 0; 
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,0.16),0 2px 10px 0 rgba(0,0,0,0.12);
+  border-radius: 15px;
+}
+
+.author {
+  font-weight: bold;
+}
+
+footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  background-color: #efefef;
+  text-align: center;
+  padding: 10px;
+}

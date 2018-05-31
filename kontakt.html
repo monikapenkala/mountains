@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="pl-PL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="icon" type="image/x-icon" href="images/favicon.ico">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery-validation@1.17.0/dist/jquery.validate.min.js"></script>
+    <title>Kontakt | Kocham góry</title>
+    <script>
+        $(document).ready(function () {
+            // pierwszy element jest aktywny po załadowaniu
+            $('#imie').focus();
+            $('#all').on('click', function () {
+                var checkboxes = $('#formularz').find('.check');
+                if (this.checked) {
+                    checkboxes.attr('checked', 'true');
+                }
+                else {
+                    checkboxes.attr('checked', 'false');
+                };
+            });
+            // tu zaczyna się skrypt validation
+
+            $('#formularz').validate({
+                rules: {
+                    imie: 'required',
+                    email: {
+                        required: true,
+                        email: true
+                    },
+                    approve: 'required'
+                },
+
+                messages: {
+                    approve: "To pole jest wymagane!",
+                    imie: "Imię jest wymagane.",
+                    email: "Adres e-mail jest wymagany.",
+                },
+                showErrors: function (errorMap, errorList) {
+                    $("#summary").html("Formularz zawiera błędy. Liczba błędów: "
+                        + this.numberOfInvalids()
+                        + ". Poniżej podano szczegóły.").addClass('error');
+                    this.defaultShowErrors();
+                }
+
+            });
+
+            // nadal jQuery
+            var form = $("#formularz");
+            var yesno = '';
+            form.validate();
+            $("#wyslij").click(function (e) {
+                e.preventDefault();
+                if (form.valid() === true) {
+                    yesno = 'TAK';
+                } else {
+                    yesno = 'NIE';
+                };
+                alert("Czy formularz jest poprawnie wypełniony: " + yesno);
+            });
+        });
+    </script>
+    <style>
+        .error {
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a class="navbar-brand" href="index.html">Kocham Góry</a>
+            </div>
+            <ul class="nav navbar-nav">
+                <li>
+                    <a href="polska.html">Góry w Polsce</a>
+                </li>
+                <li>
+                    <a href="swiat.html">Góry na świecie</a>
+                </li>
+                <li>
+                    <a href="cytaty.html">Cytaty o górach</a>
+                </li>
+                <li>
+                    <a href="galeria.html">Galeria</a>
+                </li>
+                <li class="active">
+                    <a href="kontakt.html">Kontakt</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col-xl-12">
+                <div id="summary"></div>
+                <form id="formularz">
+                    <div class="form-group">
+                        <h3>Zapisz się do naszego newslettera!</h3>
+                        <label for="imie">*Imię i nazwisko</label>
+                        <input type="text" class="form-control" name="imie" id="imie" placeholder="Wpisz swoje imię i nazwisko">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">*Adres email</label>
+                        <input type="email" class="form-control" name="email" id="email" placeholder="Wpisz swój adres email">
+                    </div>
+                    <div>
+                        <label>Zaznacz co Cię interesuje:</label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input check" type="checkbox" id="inlineCheckbox1" value="option1"> Góry w Polsce
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input check" type="checkbox" id="inlineCheckbox2" value="option2"> Góry na świecie
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input check" type="checkbox" id="inlineCheckbox3" value="option3"> Cytaty o górach
+                        </label>
+                    </div>
+                    <div class="form-check form-check-inline">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="checkbox" id="all" value="option4"> Wszystko
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label for="wiadomosc">Wiadomość</label>
+                        <textarea class="form-control" id="$('#my-textarea').restrictLength( $('#max-length-element') );" rows="3"></textarea>
+                        <small id="count" class="form-text text-muted"></small>
+                    </div>
+                    <div class="form-check">
+                        <label class="form-check-label">
+                            <input class="form-check-input" type="radio" name="approve" id="approve" value="option1"> Zgadam się na przetwarzanie moich danych osobowych przez portal Kocham Góry.
+                        </label>
+                    </div>
+                    <button id="wyslij" type="submit" class="btn btn-primary">WYŚLIJ</button>
+                </form>
+            </div>
+        </div>
+
+    </div>
+
+    <footer>
+        &copy; 2018 Monika Penkała | Jeżeli widzisz błąd na stronie, napisz do mnie na adres:
+        <a href="mailto:mon.penkala@gmail.com">mon.penkala@gmail.com</a> ;-)
+    </footer>
+
+</body>
+
+</html>
